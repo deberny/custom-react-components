@@ -42,7 +42,6 @@ const MediaBadge = (props) => {
   const Tag = tag || defaultTag;
 
   const classes = mapToCssModules(classNames(
-    className,
     {
       'media-badge' : className,
       'media-badge-container' : container,
