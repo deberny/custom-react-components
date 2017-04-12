@@ -31,8 +31,26 @@ class App extends Component {
           <ListGroupItem>
             <MediaBadge color="success" size="sm" className="img-circle">
               <div className="media-badge-container">
-                  <Icon name="user" inverse></Icon>
+                  <Icon name="user"></Icon>
               </div>
+            </MediaBadge>
+          </ListGroupItem>
+          <ListGroupItem>
+            <MediaBadge color="warning" size="sm" className="img-circle">
+              <div className="media-badge-container">
+                  <Icon name="exclamation" inverse></Icon>
+              </div>
+              <Badge color="success">4</Badge>
+            </MediaBadge>
+          </ListGroupItem>
+          <ListGroupItem>
+            <MediaBadge color="default" size="sm" className="img-circle">
+              <span className="media-badge-container">
+                  <Icon name="exclamation" inverse></Icon>
+              </span>
+              <Badge color="primary">
+                <Icon name="gear"></Icon>
+              </Badge>
             </MediaBadge>
           </ListGroupItem>
         </ListGroup>

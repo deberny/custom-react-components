@@ -14,19 +14,18 @@ const defaultProps = {
 
 const MediaBadge = (props) => {
   const {
-    className,
     tag: Tag,
     size,
     color,
-    cssModule,
+    className,
     ...attributes,
   } = props;
 
   const classes = classNames(
-    className,
+    'media-badge',
     color ? `media-badge-${color}` : false,
     size ? `media-badge-${size}` : false,
-    'media-badge'
+    className
   );
 
   return (
