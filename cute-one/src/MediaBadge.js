@@ -1,54 +1,33 @@
 import React, { PropTypes } from 'react';
 import classNames from 'classnames';
-import { mapToCssModules } from './utils';
 
 const propTypes = {
-  container: PropTypes.bool,
-  children: PropTypes.node,
+  tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
   size: PropTypes.string,
   color: PropTypes.string,
-  object: PropTypes.bool,
-  text: PropTypes.bool,
-  inverse: PropTypes.bool,
-  tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
   className: PropTypes.string,
-  cssModule: PropTypes.object
+};
+
+const defaultProps = {
+  tag: 'div'
 };
 
 const MediaBadge = (props) => {
   const {
-    container,
+    className,
+    tag: Tag,
     size,
     color,
-    object,
-    text,
-    inverse,
-    tag,
-    className,
     cssModule,
     ...attributes,
   } = props;
 
-  let defaultTag;
-  if (container) {
-    defaultTag = 'span';
-  } else if (object) {
-    defaultTag = 'img';
-  } else if (text) {
-    defaultTag = 'h2';
-  } else {
-    defaultTag = 'div';
-  }
-  const Tag = tag || defaultTag;
-
-  const classes = mapToCssModules(classNames(
-    {
-      'media-badge' : className,
-      'media-badge-container' : container,
-    },
+  const classes = classNames(
+    className,
+    color ? `media-badge-${color}` : false,
     size ? `media-badge-${size}` : false,
-    `media-badge{inverted ? '-inverted' : ''}-${color}`
-  ), cssModule);
+    'media-badge'
+  );
 
   return (
     <Tag {...attributes} className={classes} />
@@ -56,5 +35,6 @@ const MediaBadge = (props) => {
 };
 
 MediaBadge.propTypes = propTypes;
+MediaBadge.defaultProps = defaultProps;
 
 export default MediaBadge;

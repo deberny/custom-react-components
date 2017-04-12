@@ -17,23 +17,26 @@ class App extends Component {
           <ListGroupItem className="justify-content-between">sitting on a tree branch <Badge pill color ="warning">2</Badge></ListGroupItem>
           <ListGroupItem className="justify-content-between">looking at the world from above <Badge pill color="primary">1</Badge></ListGroupItem>
           <ListGroupItem active>
-          <ListGroupItemHeading>First we build components</ListGroupItemHeading>
-          <ListGroupItemText>
-          Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
-          </ListGroupItemText>
-        </ListGroupItem>
-        <ListGroupItem>
-          <ListGroupItemHeading>Then we build components that contain other components</ListGroupItemHeading>
-          <ListGroupItemText>
-          Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
-          </ListGroupItemText>
-        </ListGroupItem>
+            <ListGroupItemHeading>First we build components</ListGroupItemHeading>
+            <ListGroupItemText>
+              Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+            </ListGroupItemText>
+          </ListGroupItem>
+          <ListGroupItem>
+            <ListGroupItemHeading color="primary">Then we build components that contain other components</ListGroupItemHeading>
+            <ListGroupItemText>
+              Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+            </ListGroupItemText>
+          </ListGroupItem>
+          <ListGroupItem>
+            <MediaBadge color="success" size="sm" className="img-circle">
+              <div className="media-badge-container">
+                  <Icon name="user" inverse></Icon>
+              </div>
+            </MediaBadge>
+          </ListGroupItem>
         </ListGroup>
-        <MediaBadge color="success" className="img-circle">
-          <MediaBadge container>
-              <Icon name="user"></Icon>
-          </MediaBadge>
-        </MediaBadge>
+
       </div>
     );
   }

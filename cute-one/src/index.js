@@ -5,6 +5,5 @@ import './index.css';
 
 ReactDOM.render(
   <App />,
-  // <ShowMediaBadgeIcon />,
   document.getElementById('root')
 );
