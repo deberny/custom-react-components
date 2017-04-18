@@ -40,7 +40,7 @@ class App extends Component {
               <div className="media-badge-container">
                   <Icon name="exclamation" inverse></Icon>
               </div>
-              <Badge color="success">4</Badge>
+              <Badge color="success">9</Badge>
             </MediaBadge>
           </ListGroupItem>
           <ListGroupItem>

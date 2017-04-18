@@ -1,6 +1,7 @@
 This project was bootstrapped with
 [Create React App](https://github.com/facebookincubator/create-react-app)
-[Reactstrapp](https://github.com/reactstrap/reactstrap)
+[Reactstrapp gitHub repo](https://github.com/reactstrap/reactstrap)
+[Reactstrap components example](https://reactstrap.github.io/components/alerts/)
 [react-fa](https://github.com/andreypopp/react-fa)
 [livestax-theme](https://theme.livestax.com/components.html#media-badge)
 
@@ -11,76 +12,40 @@ You can find the most recent version of this guide [here](https://github.com/fac
 
 ## Table of Contents
 
-- [Updating to New Releases](#updating-to-new-releases)
-- [Sending Feedback](#sending-feedback)
-- [Folder Structure](#folder-structure)
+- [Steps Overview](#steps-overview)
 
-## Updating to New Releases
+## Steps Overview
 
-Create React App is divided into two packages:
+### [Create React App](https://facebook.github.io/react/docs/installation.html#creating-a-new-application)
+Follow the instructions in [Create React App](https://facebook.github.io/react/docs/installation.html#creating-a-new-application) to create a new application
 
-* `create-react-app` is a global command-line utility that you use to create new projects.
-* `react-scripts` is a development dependency in the generated projects (including this one).
+### Include livestax API
+Add theme-0.2.3.min.css in `/src`  and then import it in `src/app.js` file
 
-You almost never need to update `create-react-app` itself: it delegates all the setup to `react-scripts`.
+```js
+ import './theme-0.2.3.min.css';
+ ```
 
-When you run `create-react-app`, it always creates the project with the latest version of `react-scripts` so you’ll get all the new features and improvements in newly created apps automatically.
+### Install React Bootstrap components
 
-To update an existing project to a new version of `react-scripts`, [open the changelog](https://github.com/facebookincubator/create-react-app/blob/master/CHANGELOG.md), find the version you’re currently on (check `package.json` in this folder if you’re not sure), and apply the migration instructions for the newer versions.
-
-In most cases bumping the `react-scripts` version in `package.json` and running `npm install` in this folder should be enough, but it’s good to consult the [changelog](https://github.com/facebookincubator/create-react-app/blob/master/CHANGELOG.md) for potential breaking changes.
-
-We commit to keeping the breaking changes minimal so you can upgrade `react-scripts` painlessly.
-
-## Sending Feedback
-
-We are always open to [your feedback](https://github.com/facebookincubator/create-react-app/issues).
-
-## Folder Structure
-
-After creation, your project should look like this:
-
-```
-my-app/
-  README.md
-  node_modules/
-  package.json
-  public/
-    index.html
-    favicon.ico
-  src/
-    App.css
-    App.js
-    App.test.js
-    index.css
-    index.js
-    logo.svg
+```cmd
+npm install --save reactstrap react-addons-transition-group react-addons-css-transition-group react react-dom
 ```
 
-For the project to build, **these files must exist with exact filenames**:
+### Install Icons components via react-fa
 
-* `public/index.html` is the page template;
-* `src/index.js` is the JavaScript entry point.
+Steps outlined [here](https://github.com/andreypopp/react-fa)
 
-You can delete or rename the other files.
+### Add a new app in Livestax. When developing Apps / Theme Components Components the react app server is set up to listen on port :3000, the same as the Livestax app. Therefore it should be changed to a different port in `package.json`
 
-You may create subdirectories inside `src`. For faster rebuilds, only files inside `src` are processed by Webpack.<br>
-You need to **put any JS and CSS files inside `src`**, or Webpack won’t see them.
+```js
+"scripts": {
+  "start": "PORT=3006 react-scripts start",
+  "build": "react-scripts build",
+  "test": "react-scripts test --env=jsdom",
+  "eject": "react-scripts eject"
+}
 
-Only files inside `public` can be used from `public/index.html`.<br>
-Read instructions below for using assets from JavaScript and HTML.
+```
 
-You can, however, create more top-level directories.<br>
-They will not be included in the production build so you can use them for things like documentation.
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Very Useful information about how to work with the React project is explained in src/README.md
