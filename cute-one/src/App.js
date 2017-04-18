@@ -18,9 +18,7 @@ class App extends Component {
           <ListGroupItem className="justify-content-between">looking at the world from above <Badge pill color="primary">1</Badge></ListGroupItem>
           <ListGroupItem active>
             <ListGroupItemHeading>First we build components</ListGroupItemHeading>
-            <ListGroupItemText>
-              Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
-            </ListGroupItemText>
+            <ListGroupItemText>Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</ListGroupItemText>
           </ListGroupItem>
           <ListGroupItem>
             <ListGroupItemHeading color="primary">Then we build components that contain other components</ListGroupItemHeading>
