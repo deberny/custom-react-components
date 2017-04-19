@@ -1,3 +1,4 @@
+## Intro
 This project was 'bootstrapped' with
 
 - Facebook React documentation - [Create React App](https://github.com/facebookincubator/create-react-app)
